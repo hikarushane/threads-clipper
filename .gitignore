@@ -1,0 +1,4 @@
+.DS_Store
+*.bplist
+src/unsigned.shortcut
+.env
