@@ -92,7 +92,7 @@ shortcuts sign --mode anyone \
 
 ## 相關專案
 
-- [thread-sieve](https://github.com/shanejyeh/thread-sieve)：批次處理 Threads 已儲存貼文，一次抓幾十篇、取消儲存、整理成筆記。適合定期清理儲存清單。Threads Clipper 則是看到當下就能順手記一篇。
+- [thread-sieve](https://github.com/hikarushane/thread-sieve)：批次處理 Threads 已儲存貼文，一次抓幾十篇、取消儲存、整理成筆記。適合定期清理儲存清單。Threads Clipper 則是看到當下就能順手記一篇。
 
 ## 授權
 
