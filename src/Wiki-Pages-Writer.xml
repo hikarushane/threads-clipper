@@ -354,14 +354,14 @@ A real Threads post page is titled '&lt;name&gt; (@handle) on Threads'. When a p
 					<dict>
 						<key>attachmentsByRange</key>
 						<dict>
-							<key>{916, 1}</key>
+							<key>{984, 1}</key>
 							<dict>
 								<key>Type</key>
 								<string>Variable</string>
 								<key>VariableName</key>
 								<string>SharedURL</string>
 							</dict>
-							<key>{925, 1}</key>
+							<key>{993, 1}</key>
 							<dict>
 								<key>OutputName</key>
 								<string>Contents of URL</string>
@@ -377,6 +377,7 @@ A real Threads post page is titled '&lt;name&gt; (@handle) on Threads'. When a p
 規則：
 1. frontmatter 格式如下，不可省略任何欄位：
 ---
+title: &lt;精準中文標題&gt;
 網址: ["&lt;URL&gt;"]
 作者: ["@&lt;username&gt;"]
 tags: ["&lt;分類&gt;", "&lt;主題1&gt;", "&lt;主題2&gt;"]
@@ -384,15 +385,14 @@ status: stub
 ---
 
 2. 作者 handle 從擷取內容裡的 @xxx 判讀，找不到就填 unknown
-3. 分類 tag（第一個 tag）從以下選一個最適合的：AI 工具、工具軟體、求職履歷、健康生活、旅遊美食、生活雜記、動漫
+3. 分類 tag（第一個 tag）從以下選一個最適合的：AI Agent、Prompt Library、Mac 工具軟體、求職履歷、健康生活、旅遊美食、生活雜記、動漫、防災/避難包
 4. 主題 tag 從以下常見的選 1-2 個：AI Agent、Prompt 工程、Context 工程、MCP、Claude Code、知識管理、工作流、自動化、程式開發、設定配置、資料擷取、效率、健身、營養飲食、身心健康、旅遊、美食、省錢、生活妙招、求職、入門教學、學習方法、娛樂
 5. 如果貼文含可執行步驟/指令/設定範例，status 改為 wiki
 6. frontmatter 之後寫一段 1-2 句的摘要
 7. 用 ## Main Content 標題開始主要內容，重新組織口語化敘述為結構化段落
-8. 在最底部加 ## Cross References 段落（可先留空）
-9. 檔名建議放在輸出最後一行，格式：&lt;!-- filename: 標題.md --&gt;
-10. 如果這則貼文有附圖卡（圖片會一併附在這個請求裡），請對每張圖片做 OCR，把圖片中的文字完整讀出來，並整合進 ## Main Content。圖卡是貼文主要內容時，以圖片內容為主、貼文文字為輔；圖片中的圖表或示意圖請用文字描述其重點。絕對不要輸出任何圖片連結或 markdown 圖片語法（![...](...)）——你看到的圖片沒有可引用的網址，寫出來的一定是捏造的。
-11. 直接輸出 markdown 本身，第一個字元必須是 ---。不要用 ``` 把整份輸出包起來，也不要加任何前言或結語
+8. title 欄位：根據內文取一個精準的中文標題（15-30 字內，能讓人一眼理解主題，不要用「介紹」「分享」「整理」等泛用詞開頭），填入 frontmatter 的 title 欄位，此標題也會被用作檔名
+9. 如果這則貼文有附圖卡（圖片會一併附在這個請求裡），請對每張圖片做 OCR，把圖片中的文字完整讀出來，並整合進 ## Main Content。圖卡是貼文主要內容時，以圖片內容為主、貼文文字為輔；圖片中的圖表或示意圖請用文字描述其重點。絕對不要輸出任何圖片連結或 markdown 圖片語法（![...](...)）——你看到的圖片沒有可引用的網址，寫出來的一定是捏造的。
+10. 直接輸出 markdown 本身，第一個字元必須是 ---。不要用 ``` 把整份輸出包起來，也不要加任何前言或結語
 
 以下是貼文資料：
 
@@ -1674,7 +1674,7 @@ status: stub
 				<key>UUID</key>
 				<string>A0000001-001B-401B-801B-00000000001B</string>
 				<key>WFMatchTextPattern</key>
-				<string>&lt;!-- filename: (.+?)\.md --&gt;</string>
+				<string>(?m)^title: .+</string>
 				<key>text</key>
 				<dict>
 					<key>Value</key>
@@ -1725,7 +1725,7 @@ status: stub
 					<string>WFTextTokenString</string>
 				</dict>
 				<key>WFReplaceTextFind</key>
-				<string>(?s)\A.*&lt;!-- filename: (.+?)\.md --&gt;.*\z</string>
+				<string>(?sm)\A.*?^title: ([^\n]+).*\z</string>
 				<key>WFReplaceTextRegularExpression</key>
 				<true/>
 				<key>WFReplaceTextReplace</key>

@@ -1,5 +1,7 @@
 # Threads Clipper
 
+> **v9 (2026-08-19)** — 檔名改從 frontmatter `title` 欄位取得，不再依賴 `<!-- filename: ... -->` 註解。分類 tag 更新為 AI Agent、Prompt Library、Mac 工具軟體等九類；移除 Cross References 段落。
+
 一個 iOS/macOS 捷徑，按分享鍵就能把 Threads 貼文或任何網頁轉成結構化的 markdown 筆記。
 
 用 [Jina Reader](https://jina.ai/reader/) 抓網頁內容，丟給 Gemini 整理成帶 frontmatter、摘要、分類 tags 的 wiki 頁面，自動命名後存進指定資料夾。全程不碰鍵盤。
