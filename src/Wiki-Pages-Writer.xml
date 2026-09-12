@@ -354,14 +354,14 @@ A real Threads post page is titled '&lt;name&gt; (@handle) on Threads'. When a p
 					<dict>
 						<key>attachmentsByRange</key>
 						<dict>
-							<key>{984, 1}</key>
+							<key>{3094, 1}</key>
 							<dict>
 								<key>Type</key>
 								<string>Variable</string>
 								<key>VariableName</key>
 								<string>SharedURL</string>
 							</dict>
-							<key>{993, 1}</key>
+							<key>{3103, 1}</key>
 							<dict>
 								<key>OutputName</key>
 								<string>Contents of URL</string>
@@ -385,12 +385,33 @@ status: stub
 ---
 
 2. 作者 handle 從擷取內容裡的 @xxx 判讀，找不到就填 unknown
-3. 分類 tag（第一個 tag）從以下選一個最適合的：AI Agent、Prompt Library、Mac 工具軟體、求職履歷、健康生活、旅遊美食、生活雜記、動漫、防災/避難包
-4. 主題 tag 從以下常見的選 1-2 個：AI Agent、Prompt 工程、Context 工程、MCP、Claude Code、知識管理、工作流、自動化、程式開發、設定配置、資料擷取、效率、健身、營養飲食、身心健康、旅遊、美食、省錢、生活妙招、求職、入門教學、學習方法、娛樂
+3. 分類 tag（第一個 tag）從以下封閉清單選一個最適合的，不可自創：AI Agent 進階應用、AI 影音圖像、AI 產業觀察、AI 知識管理、AI 資安、Claude Code 技巧、Codex 技巧、LingOrm、Mac 效能工具、Obsidian、Prompt Library、UI-UX Design、iPhone 實用技巧、健康生活、動漫、實用 App、實用開源專案、專案管理、旅遊美食、求職履歷、生活雜記、網站實用指令、開發工具、電腦實用外掛
+分類判斷提示：
+- 與泰國藝人／CP Ling、Orm、00k、หลิง、ออม、LingOrm 相關的粉絲內容、劇情、訪談、剪輯、花絮、互動、迷因 → LingOrm；戀愛、情侶、放閃、曖昧、超甜、愛情故事這類 romance / CP 內容也優先 LingOrm
+- 明確談 Claude Code、CLAUDE.md、Claude Code skill、hook、MCP、settings.json → Claude Code 技巧，不要選其他 AI 分類
+- 明確談 Codex（OpenAI 的 AI coding agent）、Codex CLI、codex-cli → Codex 技巧
+- AI agent 架構、多 agent 協作、agent framework、agent workflow、agentic coding → AI Agent 進階應用
+- AI 生圖、生影片、語音合成、音樂生成、影像編輯等 AI 多媒體工具 → AI 影音圖像
+- AI 產業趨勢、模型發布、公司動態、市場分析、融資、政策監管 → AI 產業觀察
+- 用 AI 做知識管理、筆記、RAG、embedding、向量資料庫、文件搜尋 → AI 知識管理
+- AI 資安、prompt injection、jailbreak、AI 安全對齊、紅隊測試 → AI 資安
+- prompt engineering、system prompt、few-shot、chain-of-thought 等 prompt 技巧 → Prompt Library
+- 面試、求職、履歷、STAR/CARL 回答框架、hiring manager、recruiter、升職或職場建議 → 求職履歷
+- Obsidian plugin、Obsidian 設定、vault 管理、Obsidian workflow → Obsidian
+- UI/UX 設計、Figma、設計系統、使用者體驗、介面設計 → UI-UX Design
+- macOS 工具、終端機工具、Homebrew、Mac 生產力 → Mac 效能工具
+- iPhone 功能、iOS 設定、捷徑（Shortcuts）、iPhone 技巧 → iPhone 實用技巧
+- 健身、飲食、睡眠、身體保養、ADHD、burnout、焦慮、心理健康 → 健康生活
+- 開源專案推薦、GitHub repo 介紹、awesome list → 實用開源專案
+- 瀏覽器外掛、Chrome extension、VS Code extension、桌面外掛 → 電腦實用外掛
+- 手機 App 推薦、App 使用技巧 → 實用 App
+- 網站指令、瀏覽器快捷鍵、搜尋語法、網站隱藏功能 → 網站實用指令
+- 一般軟體開發工具（Git、Docker、CI/CD、IDE、程式語言）但不是 AI 相關 → 開發工具
+4. 主題 tag（第二個以後）產生 2-4 個：短詞不是句子；用繁體中文，但工具名、專案名、品牌名保留英文官方拼寫（Claude Code 正確，claude-code 錯誤）；中英混排時用一個半形空格分隔（AI Agent、Prompt 工程），純中文 tag 不加空格；不要把分類名稱重複當主題 tag；tags 一律寫成加雙引號的 flow list。優先從以下受控詞彙挑選：AI Agent、Skill、MCP、Prompt 工程、Context 工程、RAG、LLM、記憶、知識管理、工作流、多模型協作、自動化、開發流程、程式開發、架構設計、部署、成本控管、資安、設定配置、除錯踩坑、資料擷取、影音處理、設計、簡報、工具比較、開源、CLI、瀏覽器、入門教學、效率、健身、營養飲食、身心健康、ADHD、旅遊、美食、省錢、生活妙招、穿搭、3C 硬體、政治、科技、學習方法、語言學習、娛樂、百合、成人內容、求職。產品、服務、人名等專有名詞（如 Claude Code、Codex、Gemini、Obsidian、Notion、GitHub）可直接當 tag；地名只到洲、國家、一級行政區（日本、泰國、台南），不用城市
 5. 如果貼文含可執行步驟/指令/設定範例，status 改為 wiki
 6. frontmatter 之後寫一段 1-2 句的摘要
 7. 用 ## Main Content 標題開始主要內容，重新組織口語化敘述為結構化段落
-8. title 欄位：根據內文取一個精準的中文標題（15-30 字內，能讓人一眼理解主題，不要用「介紹」「分享」「整理」等泛用詞開頭），填入 frontmatter 的 title 欄位，此標題也會被用作檔名
+8. title 欄位：讓人只看標題就知道這則筆記的核心知識點或實用資訊，此標題也會被用作檔名。寫出具體主題，不要聳動、模糊的行銷標題；內容在講明確的工具、服務、專案、方法論或概念時，標題要包含其正式名稱；英文人名、品牌、專案名、產品名、社群名保留原本英文拼寫，不要翻譯；不要放 GitHub 星數、價格、「免費」「白嫖」「必看」等噱頭詞；不要用比喻或類比當標題（如「廚房管理術」「天堂」）；標題是名詞短語或一句話描述，不是文章題目式的修辭；80 字以內，不含 / 或 : 等檔名禁用字元。壞標題 → 好標題範例：「社畜求酒精光線插座天堂」→「台北市兼具酒精、光線、插座的工作空間」；「白嫖網域！網站成本歸零」→「Digiplat 免費申請二級域名」；「Git 三大流程：廚房管理術」→「Git Flow vs GitHub Flow vs GitLab Flow」；「AI 實用評估 GitHub 專案：打破迷思」→「評估 Git 專案品質的方法」；「AI專家員工庫，Github 81萬收藏！」→「awesome-agents，AI 專家 agent 列表」
 9. 如果這則貼文有附圖卡（圖片會一併附在這個請求裡），請對每張圖片做 OCR，把圖片中的文字完整讀出來，並整合進 ## Main Content。圖卡是貼文主要內容時，以圖片內容為主、貼文文字為輔；圖片中的圖表或示意圖請用文字描述其重點。絕對不要輸出任何圖片連結或 markdown 圖片語法（![...](...)）——你看到的圖片沒有可引用的網址，寫出來的一定是捏造的。
 10. 直接輸出 markdown 本身，第一個字元必須是 ---。不要用 ``` 把整份輸出包起來，也不要加任何前言或結語
 

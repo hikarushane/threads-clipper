@@ -1,6 +1,6 @@
 # Threads Clipper
 
-> **v9 (2026-08-19)** — 檔名改從 frontmatter `title` 欄位取得，不再依賴 `<!-- filename: ... -->` 註解。分類 tag 更新為 AI Agent、Prompt Library、Mac 工具軟體等九類；移除 Cross References 段落。
+> **v10 (2026-09-13)** — system prompt 與 thread-sieve 對齊：分類 tag 改為 24 類封閉清單並加入分類判斷提示；主題 tag 改為 2–4 個並採用 knowledge-wiki 的受控詞彙與格式規範；title 改用 thread-sieve 的標題規則與壞→好範例。
 
 一個 iOS/macOS 捷徑，按分享鍵就能把 Threads 貼文或任何網頁轉成結構化的 markdown 筆記。
 
